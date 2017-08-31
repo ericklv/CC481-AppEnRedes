@@ -10,6 +10,8 @@ headerbar=Gtk.HeaderBar()
 headerbar.set_show_close_button(True)
 go_back_button=Gtk.Button("Back")
 go_forward_button=Gtk.Button("Forward")
+go_reload_button=Gtk.Button("Refresh")
+go_history_button=Gtk.Button("History")
 #go.back.connect("clicked",lambda x: webview.go_back())
 #go_back_arrow=Gtk.Image.new_from_icon_name("go-previus",Gtk.IconSize.SMALL_TOOLBAR)
 #go_back_button.add(go_back_arrow)
@@ -22,6 +24,8 @@ def on_enter(entry):
         if (url == "about:history"):
 			webview.open("/tmp/history.html")
 			return
+        else:
+            url= "http://"+url
 		
         history_file = open("/tmp/history.html","a+")
         history_file.writelines("* " + url + "<br>")
@@ -34,6 +38,12 @@ def on_go_back(button):
 def on_go_forward(button):
         webview.go_forward()
 
+def on_go_reload(button):
+        webview.go_reload()
+
+def on_go_history(button):
+        webview.open("/tmp/history.html")
+
 entry=Gtk.Entry()
 entry.connect("activate",on_enter)
 go_back_button.connect("clicked",on_go_back)
@@ -41,7 +51,8 @@ go_back_button.connect("clicked",on_go_forward)
 headerbar.set_custom_title(entry)
 headerbar.pack_start(go_back_button)
 headerbar.pack_start(go_forward_button)
-
+headerbar.pack_start(go_reload_button)
+headerbar.pack_start(go_history_button)
 
 scrolled_window=Gtk.ScrolledWindow()
 
