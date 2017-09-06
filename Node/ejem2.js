@@ -1,108 +1,108 @@
 //Declaramos los ciclos
-let ciclos = [
+let semesters = [
   {
-    ciclo:  '1',
-    matriculados:  '0'
+    semester:  '1',
+    matriculate:  '0'
   },
   {
-    ciclo:  '2',
-    matriculados:  '0'
+    semester:  '2',
+    matriculate:  '0'
   },
   {
-    ciclo:  '3',
-    matriculados:  '0'
+    semester:  '3',
+    matriculate:  '0'
   },
   {
-    ciclo:  '4',
-    matriculados:  '0'
+    semester:  '4',
+    matriculate:  '0'
   },
   {
-    ciclo:  '5',
-    matriculados:  '0'
+    semester:  '5',
+    matriculate:  '0'
   },
   {
-    ciclo:  '6',
-    matriculados:  '0'
+    semester:  '6',
+    matriculate:  '0'
   },
   {
-    ciclo:  '7',
-    matriculados:  '0'
+    semester:  '7',
+    matriculate:  '0'
   },
   {
-    ciclo:  '8',
-    matriculados:  '0'
+    semester:  '8',
+    matriculate:  '0'
   },
   {
-    ciclo:  '9',
-    matriculados:  '0'
+    semester:  '9',
+    matriculate:  '0'
   },
   {
-    ciclo:  '10',
-    matriculados:  '0'
+    semester:  '10',
+    matriculate:  '0'
   },
 ];
 
 //Declaramos los estudiantes
 let students = [  
-  { codigo:   '20164563D',
+  { cod:   '20164563D',
     name:     'Chris',
-    apellido: 'Griffin',
-    ciclo:    '1'
+    lastname: 'Griffin',
+    semester:    '1'
   },
-  { codigo:'20134283D',
+  { cod:'20134283D',
     name: 'Meg',
-    apellido: 'Griffin',
-    ciclo:    '5'
+    lastname: 'Griffin',
+    semester:    '5'
   },
-  { codigo:'20119478R',
+  { cod:'20119478R',
     name: 'Peter',
-    apellido: 'Griffin',
-    ciclo:    '6'
+    lastname: 'Griffin',
+    semester:    '6'
   },
-  { codigo:'20124672A',
+  { cod:'20124672A',
     name: 'Stewie',
-    apellido: 'Griffin',
-    ciclo:    '6'
+    lastname: 'Griffin',
+    semester:    '6'
   },
-  { codigo:'20134579K',
+  { cod:'20134579K',
     name: 'Joe',
-    apellido: 'Piernas',
-    ciclo:    '7'
+    lastname: 'Piernas',
+    semester:    '7'
   },
-  { codigo:'20134578F',
+  { cod:'20134578F',
     name: 'Glen',
-    apellido: 'Quagmire',
-    ciclo:    '8'
+    lastname: 'Quagmire',
+    semester:    '8'
   },
-  { codigo:'20196385F',
+  { cod:'20196385F',
     name: 'Lois',
-    apellido: 'Griffin',
-    ciclo:    '3'
+    lastname: 'Griffin',
+    semester:    '3'
   },
-  { codigo:'20114725F',
+  { cod:'20114725F',
     name: 'Cleveland',
-    apellido: 'Nigga',
-    ciclo:    '5'
+    lastname: 'Nigga',
+    semester:    '5'
   }
 ];
 
 
 students.forEach(function(item, index){
-  ciclos.forEach(function(current_value){
-    if(current_value.ciclo==item.ciclo){
-      current_value.matriculados++;
+  semesters.forEach(function(current_value){
+    if(current_value.semester==item.semester){
+      current_value.matriculate++;
     }
 
   });
 });
 
 
-console.log("\nResumen:\n\n| # Ciclo | # Estudiantes\t|");
-console.log("---------------------------------");
+console.log("\nSummary:\n\n| Semester | # Students\t|");
+console.log("-------------------------");
 
-ciclos.forEach(
+semesters.forEach(
   function(item, index){
-    console.log("| > " + item.ciclo + "\t|> \t" + item.matriculados + "\t\t|");
+    console.log("| > " + item.semester + "\t|> \t" + item.matriculate + "\t|");
   });
 
 
