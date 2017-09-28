@@ -1,0 +1,30 @@
+extends layout
+
+block content
+	.navbar
+
+	.container
+		.clearfix
+			form(action='/recuperardatos' method='post')
+				.clearfix
+					.form-inline
+						.col-xs-12.form-group
+							.input-group.col-sm-8.col-sm-offset-2
+								input.form-control(name='usuario', id='name', type='text', placeholder='User', required='required')
+								.input-group-addon
+									span.glyphicon.glyphicon-user
+								
+				br
+				.clearfix
+					.form-inline
+						.col-xs-12.form-group
+							.input-group.col-sm-8.col-sm-offset-2
+								input.form-control(name='pass' type='password', placeholder='Pass', required='required')
+								.input-group-addon
+									span.glyphicon.glyphicon-lock
+								
+				br
+				.clearfix
+					.text-center
+						button.btn.btn-default.submit(type='submit' value='Enviar' href='/users') POST!! >:v
+				br
