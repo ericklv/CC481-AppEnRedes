@@ -1,3 +1,5 @@
+//Funcional
+
 const seneca = require('seneca')()
 const express = require('express')()
 const web = require('seneca-web')
@@ -25,8 +27,21 @@ seneca.client()
 })
 seneca.add({area: 'product', action: 'list'}, function (args, done) {
   try {
-    done(null, {bar: 'Bazinga!'})
+    //done(null, {bar: 'Bazinga!'});
+    done(null, {bar: 'Bazinga!'+ invertir('Bazinga!')})
   } catch (err) {
     done(err, null)
   }
 })
+
+function invertir(cadena) {
+  
+  var x = cadena.length;
+  var cadenaInvertida = "";
+  while (x>=0) {
+    cadenaInvertida = cadenaInvertida + cadena.charAt(x);
+    x--;
+  }
+  cadenaInvertida=cadenaInvertida.toUpperCase();
+  return cadenaInvertida;
+}
